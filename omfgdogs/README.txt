@@ -1,0 +1,1 @@
+Index html displays the omfgdog  gif as the background and loops the omfgdogs.mp3. When the width of the browser is less than 992 pixels then the background turns to white and the message "No OMFGDOGS for you!" is displayed. omfgdogs.css is used for styling the page.

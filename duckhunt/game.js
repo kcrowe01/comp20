@@ -5,14 +5,14 @@ function draw()
 	image = new Image();
 	image.onload = function() {
 
+	//tree
+	ctx.drawImage(image, 0, 270, 80, 130, 10, 125, 250, 370);
 	//dirt, grass, and bushes
 	ctx.drawImage(image, 0, 400, 900, 500, 0, 0, 800, 600);
 	//bird 1
 	ctx.drawImage(image, 205, 150, 40, 40, 200, 200, 75, 75);
 	//dog
 	ctx.drawImage(image, 178, 0, 65, 45, 500, 452, 130, 90);
-	//tree
-	ctx.drawImage(image, 0, 270, 80, 130, 40, 295, 160, 260);
 	//bird 2
 	ctx.drawImage(image, 0, 115, 35, 30, 450, 250, 70, 60);
 	//bird 3

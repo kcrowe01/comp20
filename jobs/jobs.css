@@ -1,0 +1,25 @@
+#list{
+	border-style: double;
+	border-spacing: 12px;
+	border-width: 2px;
+	border-color: rgb(0, 0, 0);
+	border-radius: 20px;
+	text-align: center;
+	background-image:url(computer-science.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.table {
+	border-collapse: collapse;
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.table td{
+	vertical-align: center;
+	background-color: rgb(225, 225, 225);
+	border: 2px solid black;
+	padding: 10px;
+}

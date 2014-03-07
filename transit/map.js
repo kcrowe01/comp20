@@ -9,6 +9,7 @@ function load()
         };
         var map = new google.maps.Map(document.getElementById("map-canvas"),
             mapOptions);
+        marker.setMap(map);
     })
 }
 google.maps.event.addDomListener(window, 'load', load);

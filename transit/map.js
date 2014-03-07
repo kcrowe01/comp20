@@ -4,7 +4,7 @@ function load()
 		myLat = position.coords.latitude;
 		myLng = position.coords.longitude;
 	var mapOptions = {
-          center: new google.maps.LatLng(myLat, myLng),
+          center: new google.maps.LatLng(24, 82),
           zoom: 8
         };
         var map = new google.maps.Map(document.getElementById("map-canvas"),

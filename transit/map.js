@@ -1,6 +1,6 @@
 function load()
 {
-	navigator.geolocation.getCurrentPosition(function(position)){
+	navigator.geolocation.getCurrentPosition(function(position){
 		myLat = position.coords.latitude;
 		myLng = position.coords.longitude;
 	var mapOptions = {
@@ -9,6 +9,6 @@ function load()
         };
         var map = new google.maps.Map(document.getElementById("map-canvas"),
             mapOptions);
-    }
+    })
 }
 google.maps.event.addDomListener(window, 'load', load);

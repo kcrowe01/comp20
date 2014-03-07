@@ -11,9 +11,13 @@ function load()
             mapOptions);
        		marker = new google.maps.Marker({
         	position: mapOptions.center,
-        	title: "Here I Am!"
+        	title: "You are here"
         });
         marker.setMap(map);
+        google.maps.event.addDomListener(marker, 'click', function() {
+        		infowindow.setContent(marker.title);
+        		infowindow.open(map, marker);
+        });
     })
 }
 google.maps.event.addDomListener(window, 'load', load);

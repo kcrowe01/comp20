@@ -14,6 +14,7 @@ function load()
         	title: "You are here"
         });
         marker.setMap(map);
+        var infowindow = new google.maps.InfoWindow();
         google.maps.event.addDomListener(marker, 'click', function() {
         		infowindow.setContent(marker.title);
         		infowindow.open(map, marker);

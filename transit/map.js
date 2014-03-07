@@ -10,7 +10,7 @@ function load()
         var map = new google.maps.Map(document.getElementById("map-canvas"),
             mapOptions);
         marker = new google.maps.marker({
-        	position: me,
+        	position: mapOptions.center,
         	title: "Here I Am!"
         });
         marker.setMap(map);

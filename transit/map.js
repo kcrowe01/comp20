@@ -224,6 +224,13 @@ function displayOrange(map, lines)
     });
     marker.setMap(map);
     }
+          var path = new google.maps.Polyline({
+        path: lines.Orange;
+        geodesic: true;
+        strokeColor: orange;
+        strokeWeight: 2;
+      })
+      path.setMap(map);
 }
 function displayBlue(map, lines)
 {
@@ -236,6 +243,13 @@ function displayBlue(map, lines)
         });
         marker.setMap(map);
       }
+      var path = new google.maps.Polyline({
+        path: lines.Blue;
+        geodesic: true;
+        strokeColor: blue;
+        strokeWeight: 2;
+      })
+      path.setMap(map);
 }
 function displayRed(map, lines)
 {
@@ -247,6 +261,13 @@ function displayRed(map, lines)
     });
     marker.setMap(map);
     }
+          var path = new google.maps.Polyline({
+        path: lines.Red;
+        geodesic: true;
+        strokeColor: red;
+        strokeWeight: 2;
+      })
+      path.setMap(map);
 }
    
 // marker = new google.maps.Marker({     

@@ -145,7 +145,7 @@ lines = {
             lat: splitline[2],
             lng: splitline[3],
         }
-        lines[splitline[0]].push(info);
+        lines[splitline[0]].append(info);
     }
     var request = new XMLHttpRequest();
     request.open('GET', 'http://mbtamap.herokuapp.com/mapper/rodeo.json', false);

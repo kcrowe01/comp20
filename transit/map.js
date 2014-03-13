@@ -147,14 +147,14 @@ lines = {
         }
         console.log(splitline[0]);
         console.log(lines.Blue);
-        if(splitline[0] == Blue){
-            lines[Blue].push(info);
+        if(splitline[0] == "Blue"){
+            lines.Blue.push(info);
         }
-        else if(splitline[0] == Red){
-            lines[Red].push(info);
+        else if(splitline[0] == "Red"){
+            lines.Red.push(info);
         }
         else{
-            lines[Orange].push(info);
+            lines.Orange.push(info);
         }
     }
     var request = new XMLHttpRequest();

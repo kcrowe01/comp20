@@ -9,7 +9,7 @@ function loadMap()
         };
         var map = new google.maps.Map(document.getElementById("map-canvas"),
             mapOptions);
-       		marker = new google.maps.Marker({
+       		var marker = new google.maps.Marker({
         	position: mapOptions.center,
         	title: "You are here"
         });
@@ -217,7 +217,7 @@ function displayOrange(map, lines)
     arr[18][0] = 42.40237;
     arr[18][1] = -71.077082;*/
     for(i = 0; i < 19; i++){
-    marker = new google.maps.Marker;
+    var marker = new google.maps.Marker;
     marker.setPosition({
         lat: lines.Orange[i].lat,
         lng: lines.Orange[i].lng
@@ -231,7 +231,7 @@ function displayBlue(map, lines)
       for(i = 0; i < 19; i++){
         console.log(lines.Blue[i].lat);
         console.log(lines.Blue[i].lng);
-        marker = new google.maps.Marker;
+        var marker = new google.maps.Marker;
         marker.setPosition({
         lat: lines.Blue[i].lat,
         lng: lines.Blue[i].lng
@@ -243,7 +243,7 @@ function displayBlue(map, lines)
 function displayRed(map, lines)
 {
       for(i = 0; i < 19; i++){
-    marker = new google.maps.Marker;
+    var marker = new google.maps.Marker;
     marker.setPosition({
         lat: lines.Red[i].lat,
         lng: lines.Red[i].lng

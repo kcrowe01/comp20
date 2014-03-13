@@ -28,10 +28,11 @@ function placeStation(map)
 {    
     var request = new XMLHttpRequest();
     request.open('GET', 'http://mbtamap.herokuapp.com/mapper/rodeo.json', false);
+    request.send(null);
     str = request.responseText;
     console.log(str);
-   // var parsed = JSON.parse(str);
-    //console.log(parsed['line']); 
+    var parsed = JSON.parse(str);
+    console.log(parsed['line']); 
 }
    
 // marker = new google.maps.Marker({     

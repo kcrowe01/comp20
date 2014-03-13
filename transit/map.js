@@ -141,9 +141,9 @@ lines = {
     for( i = 0; i < split.length; i++){
         var splitline = split[i].split(",");
         var info = {
-            station: splitline[1];
-            lat: splitline[2];
-            lng: splitline[3];
+            station: splitline[1],
+            lat: splitline[2],
+            lng: splitline[3],
         }
         lines[splitline[0]].append(info);
     }

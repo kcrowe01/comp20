@@ -236,6 +236,7 @@ function displayBlue(map, lines)
         lat: lines.Blue[i].lat,
         lng: lines.Blue[i].lng
         });
+        console.log(marker.lat);
         marker.setMap(map);
       }
 }

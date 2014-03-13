@@ -45,11 +45,17 @@ function placeStation(map)
 }
 function displayOrange(map)
 {
-    var arr[19][2];
+    var arr = new Array(19);
+    for( i = 0; i < 19; i++){
+        arr[i] = new Array(2);
+    }
     arr[0][0] = 42.34735;
     arr[0][1] = -71.0757;
     marker = new google.maps.Marker;
-    marker.setPosition(;at: arr[0][0], lng: arr[0][1]);
+    marker.setPosition({
+        lat: arr[0][0],
+        lng: arr[0][1]
+    });
     marker.setMap(map);
 }
    

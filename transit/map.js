@@ -146,6 +146,7 @@ lines = {
             lng: splitline[3]
         }
         console.log(splitline[0]);
+        console.log(lines.Blue);
         if(splitline[0] == Blue){
             lines[Blue].push(info);
         }

@@ -135,7 +135,7 @@ function placeStation(map)
 lines = {
     Red: [],
     Orange: [],
-    Blue: []
+    Blue: [],
 };
     var split = str.split("\n");
     for( i = 0; i < split.length; i++){

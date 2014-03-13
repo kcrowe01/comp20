@@ -26,7 +26,7 @@ google.maps.event.addDomListener(window, 'load', loadMap);
 
 function placeStation(map)
 {    
-    var request = new XMLHttpRequest;
+    var request = new XMLHttpRequest();
     request.open('GET', 'http://mbtamap.herokuapp.com/mapper/rodeo.json', false);
     str = request.responseText;
     console.log(str);

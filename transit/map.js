@@ -26,7 +26,7 @@ google.maps.event.addDomListener(window, 'load', loadMap);
 
 function placeStation(map)
 {    
-    str = "Blue,Airport,42.374262,-71.030395
+    var str = "Blue,Airport,42.374262,-71.030395
 Blue,Aquarium,42.359784,-71.051652
 Blue,Beachmont,42.39754234,-70.99231944
 Blue,Bowdoin,42.361365,-71.062037
@@ -46,8 +46,8 @@ Orange,Forest Hills,42.300523,-71.113686
 Orange,Green Street,42.310525,-71.10741400000001
 Orange,Haymarket,42.363021,-71.05829
 Orange,Jackson Square,42.323132,-71.099592
-Orange,Malden Center,42.426632,-71.07411
-Orange,Mass Ave,42.341512,-71.083423
+Orange,Malden Center,42.426632,-71.07411' +
+'Orange,Mass Ave,42.341512,-71.083423
 Orange,North Station,42.365577,-71.06129
 Orange,Oak Grove,42.43668,-71.07109699999999
 Orange,Roxbury Crossing,42.331397,-71.095451
@@ -62,8 +62,8 @@ Red,Andrew,42.330154,-71.057655
 Red,Ashmont,42.284652,-71.06448899999999
 Red,Braintree,42.2078543,-71.0011385
 Red,Broadway,42.342622,-71.056967
-Red,Central Square,42.365486,-71.103802
-Red,Charles/MGH,42.361166,-71.070628
+Red,Central Square,42.365486,-71.103802' +
+'Red,Charles/MGH,42.361166,-71.070628
 Red,Davis,42.39674,-71.121815
 Red,Downtown Crossing,42.355518,-71.060225
 Red,Fields Corner,42.300093,-71.061667
@@ -78,8 +78,7 @@ Red,Quincy Center,42.251809,-71.005409
 Red,Savin Hill,42.31129,-71.053331
 Red,Shawmut,42.29312583,-71.06573796000001
 Red,South Station,42.352271,-71.05524200000001
-Red,Wollaston,42.2665139,-71.0203369
-";
+Red,Wollaston,42.2665139,-71.0203369";
 lines = {
     Red: [],
     Orange: [],

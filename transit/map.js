@@ -28,7 +28,7 @@ function placeStation(map)
 {    
     var request = new XMLHttpRequest;
     request.open('GET', 'http://mbtamap.herokuapp.com/mapper/rodeo.json', true);
-    str = request.responseJSON;
+    str = request.responseText;
     var parsed = JSON.parse(str);
     console.log(parsed['line']); 
 }

@@ -230,13 +230,14 @@ function displayBlue(map, lines)
     
       for(i = 0; i < 19; i++){
         console.log(lines.Blue[i].lat);
-    marker = new google.maps.Marker;
-    marker.setPosition({
+        console.log(lines.Blue[i].lng);
+        marker = new google.maps.Marker;
+        marker.setPosition({
         lat: lines.Blue[i].lat,
         lng: lines.Blue[i].lng
-    });
-    marker.setMap(map);
-    }
+        });
+        marker.setMap(map);
+      }
 }
 function displayRed(map, lines)
 {

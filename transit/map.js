@@ -155,7 +155,7 @@ lines = {
     var parsed = JSON.parse(str);
     console.log(parsed['line']); 
     if(parsed['line'] == "orange"){
-        displayOrange(map);
+        displayOrange(map, lines);
     }
     else if(parsed['line'] == "blue"){
         displayBlue(map);
@@ -164,7 +164,7 @@ lines = {
         displayRed(map);
     }
 }
-function displayOrange(map)
+function displayOrange(map, lines)
 {
     /*var arr = new Array(19);
     for( i = 0; i < 19; i++){
@@ -217,7 +217,7 @@ function displayOrange(map)
     marker.setMap(map);
     }
 }
-function displayBlue(map)
+function displayBlue(map, lines)
 {
       for(i = 0; i < 19; i++){
     marker = new google.maps.Marker;
@@ -228,7 +228,7 @@ function displayBlue(map)
     marker.setMap(map);
     }
 }
-function displayRed(map)
+function displayRed(map, lines)
 {
       for(i = 0; i < 19; i++){
     marker = new google.maps.Marker;

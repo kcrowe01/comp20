@@ -33,6 +33,24 @@ function placeStation(map)
     console.log(str);
     var parsed = JSON.parse(str);
     console.log(parsed['line']); 
+    if(parsed['line'] == "orange"){
+        displayOrange(map);
+    }
+    else if(parsed['line'] == "blue"){
+        displayBlue(map);
+    }
+    else if(parsed['line'] == "red"){
+        displayRed(map);
+    }
+}
+function displayOrange(map)
+{
+    var arr[19][2];
+    arr[0][0] = 42.34735;
+    arr[0][1] = -71.0757;
+    marker = new google.maps.Marker;
+    marker.setPosition(;at: arr[0][0], lng: arr[0][1]);
+    marker.setMap(map);
 }
    
 // marker = new google.maps.Marker({     

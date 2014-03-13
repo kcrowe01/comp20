@@ -137,7 +137,7 @@ lines = {
     Orange: [],
     Blue: []
 };
-    var split = str.split(" ");
+    var split = str.split("^");
     for( i = 0; i < split.length; i++){
         var splitline = split[i].split(",");
         var info = {

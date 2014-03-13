@@ -20,11 +20,11 @@ function load()
         		infowindow.open(map, marker);
         });
     })
-    placeStation(map);
+    //placeStation(map);
 }
 google.maps.event.addDomListener(window, 'load', load);
 
-function placeStation(map){    
+/*function placeStation(map){    
 
     str = '{"line":"orange","schedule":[{"TripID":"O9861B101","Destination":"Oak
 Grove","Predictions":[{"StopID":"70001","Stop":"Forest
@@ -151,4 +151,4 @@ var parsed = JSON.parse(str);
 console.log(parsed['line']);    
 // marker = new google.maps.Marker({     
 //postion:      
-//}) }
+//}) }*/

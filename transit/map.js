@@ -216,7 +216,7 @@ function displayOrange(map, lines)
     arr[17][1] = -71.063917;
     arr[18][0] = 42.40237;
     arr[18][1] = -71.077082;*/
-    for(i = 0; i < 19; i++){
+    for(i = 0; i < lines.Orange.length; i++){
     var marker = new google.maps.Marker;
     marker.setPosition({
         lat: Number(lines.Orange[i].lat),
@@ -228,21 +228,18 @@ function displayOrange(map, lines)
 function displayBlue(map, lines)
 {
     
-      for(i = 0; i < 19; i++){
-        console.log(lines.Blue[i].lat);
-        console.log(lines.Blue[i].lng);
+      for(i = 0; i < lines.Blue.length; i++){
         var marker = new google.maps.Marker;
         marker.setPosition({
             lat: Number(lines.Blue[i].lat),
             lng: Number(lines.Blue[i].lng)
         });
-        console.log(marker.lat);
         marker.setMap(map);
       }
 }
 function displayRed(map, lines)
 {
-      for(i = 0; i < 19; i++){
+      for(i = 0; i < lines.Red.length; i++){
     var marker = new google.maps.Marker;
     marker.setPosition({
         lat: Number(lines.Red[i].lat),

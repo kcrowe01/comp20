@@ -233,8 +233,8 @@ function displayBlue(map, lines)
         console.log(lines.Blue[i].lng);
         var marker = new google.maps.Marker;
         marker.setPosition({
-            lat: Number(lines.Blue[i].lat),
-            lng: Number(lines.Blue[i].lng)
+            lat: parseInt(lines.Blue[i].lat),
+            lng: parseInt(lines.Blue[i].lng)
         });
         console.log(marker.lat);
         marker.setMap(map);

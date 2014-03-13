@@ -135,7 +135,7 @@ function placeStation(map)
 lines = {
     Red: [],
     Orange: [],
-    Blue: [],
+    Blue: []
 };
     var split = str.split(" ");
     for( i = 0; i < split.length; i++){
@@ -143,7 +143,7 @@ lines = {
         var info = {
             station: splitline[1],
             lat: splitline[2],
-            lng: splitline[3],
+            lng: splitline[3]
         }
         console.log(splitline[0]);
         if(splitline[0] == Blue){

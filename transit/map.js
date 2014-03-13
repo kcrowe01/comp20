@@ -58,6 +58,36 @@ function displayOrange(map)
     });
     marker.setMap(map);
 }
+function displayBlue(map)
+{
+      var arr = new Array(19);
+    for( i = 0; i < 19; i++){
+        arr[i] = new Array(2);
+    }
+    arr[0][0] = 42.34735;
+    arr[0][1] = -71.0757;
+    marker = new google.maps.Marker;
+    marker.setPosition({
+        lat: arr[0][0],
+        lng: arr[0][1]
+    });
+    marker.setMap(map);  
+}
+function displayRed(map)
+{
+      var arr = new Array(19);
+    for( i = 0; i < 19; i++){
+        arr[i] = new Array(2);
+    }
+    arr[0][0] = 42.34735;
+    arr[0][1] = -71.0757;
+    marker = new google.maps.Marker;
+    marker.setPosition({
+        lat: arr[0][0],
+        lng: arr[0][1]
+    });
+    marker.setMap(map);  
+}
    
 // marker = new google.maps.Marker({     
 //postion:      

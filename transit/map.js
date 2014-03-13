@@ -145,7 +145,7 @@ lines = {
             lat: splitline[2],
             lng: splitline[3],
         }
-        console.log(splitline);
+        console.log(splitline[0]);
         lines.splitline[0].push(info);
     }
     var request = new XMLHttpRequest();

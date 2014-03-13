@@ -127,7 +127,9 @@ function displayOrange(map, lines)
 {
     var coordinates = new Array(lines.Orange.length);
     for(i = 0; i < lines.Orange.length; i++){
-    var marker = new google.maps.Marker;
+    var marker = new google.maps.Marker({
+        icon: 'marker.png'
+    });
     marker.setPosition({
         lat: Number(lines.Orange[i].lat),
         lng: Number(lines.Orange[i].lng)
@@ -147,7 +149,9 @@ function displayBlue(map, lines)
 {
       var coordinates = new Array(lines.Blue.length);
       for(i = 0; i < lines.Blue.length; i++){
-        var marker = new google.maps.Marker;
+        var marker = new google.maps.Marker({
+            icon: 'marker.png'
+        });
         marker.setPosition({
             lat: Number(lines.Blue[i].lat),
             lng: Number(lines.Blue[i].lng)
@@ -167,7 +171,9 @@ function displayRed(map, lines)
 {
      var coordinates = new Array(lines.Red.length);
       for(i = 0; i < lines.Red.length; i++){
-    var marker = new google.maps.Marker;
+    var marker = new google.maps.Marker({
+        icon: 'marker.png'
+    });
     marker.setPosition({
         lat: Number(lines.Red[i].lat),
         lng: Number(lines.Red[i].lng)

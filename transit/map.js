@@ -227,7 +227,7 @@ function displayOrange(map, lines)
         var path = new google.maps.Polyline({
         path: lines.Orange,
         geodesic: true,
-        strokeColor: orange,
+        strokeColor: '#ff6600',
         strokeWeight: 2,
       })
       path.setMap(map);
@@ -246,7 +246,7 @@ function displayBlue(map, lines)
       var path = new google.maps.Polyline({
         path: lines.Blue,
         geodesic: true,
-        strokeColor: blue,
+        strokeColor: '#0000ff',
         strokeWeight: 2,
       })
       path.setMap(map);
@@ -264,7 +264,7 @@ function displayRed(map, lines)
           var path = new google.maps.Polyline({
         path: lines.Red,
         geodesic: true,
-        strokeColor: red,
+        strokeColor: '#ff0000',
         strokeWeight: 2,
       })
       path.setMap(map);

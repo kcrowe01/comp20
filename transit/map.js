@@ -227,8 +227,9 @@ function displayOrange(map, lines)
 }
 function displayBlue(map, lines)
 {
-    console.log(lines.Blue[0].lat);
+    
       for(i = 0; i < 19; i++){
+        console.log(lines.Blue[i].lat);
     marker = new google.maps.Marker;
     marker.setPosition({
         lat: lines.Blue[i].lat,

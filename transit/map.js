@@ -106,6 +106,10 @@ lines = {
     request.open('GET', 'http://mbtamap.herokuapp.com/mapper/rodeo.json', false);
     request.send(null);
     str = request.responseText;
+    if(request.status == 500){
+        alert('Error retrieving data from the server.');
+        return;
+    }
     console.log(str);
     var parsed = JSON.parse(str);
     console.log(parsed['line']); 

@@ -30,8 +30,8 @@ function placeStation(map)
     request.open('GET', 'http://mbtamap.herokuapp.com/mapper/rodeo.json', false);
     str = request.responseText;
     console.log(str);
-    var parsed = JSON.parse(str);
-    console.log(parsed['line']); 
+   // var parsed = JSON.parse(str);
+    //console.log(parsed['line']); 
 }
    
 // marker = new google.maps.Marker({     

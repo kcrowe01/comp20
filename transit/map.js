@@ -146,7 +146,15 @@ lines = {
             lng: splitline[3],
         }
         console.log(splitline[0]);
-        lines.splitline[0].push(info);
+        if(splitline[0] == Blue){
+            lines.Blue.push(info);
+        }
+        else if(splitline[0] == Red){
+            lines.Red.push(info);
+        }
+        else{
+            lines.Orange.push(info);
+        }
     }
     var request = new XMLHttpRequest();
     request.open('GET', 'http://mbtamap.herokuapp.com/mapper/rodeo.json', false);

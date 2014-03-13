@@ -158,10 +158,10 @@ lines = {
         displayOrange(map, lines);
     }
     else if(parsed['line'] == "blue"){
-        displayBlue(map);
+        displayBlue(map, lines);
     }
     else if(parsed['line'] == "red"){
-        displayRed(map);
+        displayRed(map, lines);
     }
 }
 function displayOrange(map, lines)

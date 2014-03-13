@@ -216,6 +216,7 @@ function displayOrange(map, lines)
     arr[17][1] = -71.063917;
     arr[18][0] = 42.40237;
     arr[18][1] = -71.077082;*/
+    var coordinates[lines.Orange.length];
     for(i = 0; i < lines.Orange.length; i++){
     var marker = new google.maps.Marker;
     marker.setPosition({
@@ -223,9 +224,10 @@ function displayOrange(map, lines)
         lng: Number(lines.Orange[i].lng)
     });
     marker.setMap(map);
+    coordinates[i] = new google.maps.LatLng(lines.Orange[i].lat, lines.Orange[i].lng);
     }
         var path = new google.maps.Polyline({
-        path: lines.Orange,
+        path: coordinates,
         geodesic: true,
         strokeColor: '#ff6600',
         strokeWeight: 2,
@@ -234,7 +236,7 @@ function displayOrange(map, lines)
 }
 function displayBlue(map, lines)
 {
-    
+      var coordinates[lines.Blue.length];
       for(i = 0; i < lines.Blue.length; i++){
         var marker = new google.maps.Marker;
         marker.setPosition({
@@ -242,9 +244,10 @@ function displayBlue(map, lines)
             lng: Number(lines.Blue[i].lng)
         });
         marker.setMap(map);
+        coordinates[i] = new google.maps.LatLng(lines.Blue[i].lat, lines.Blue[i].lng);
       }
       var path = new google.maps.Polyline({
-        path: lines.Blue,
+        path: coordinates,
         geodesic: true,
         strokeColor: '#0000ff',
         strokeWeight: 2,
@@ -253,6 +256,7 @@ function displayBlue(map, lines)
 }
 function displayRed(map, lines)
 {
+     var coordinates[lines.Red.length];
       for(i = 0; i < lines.Red.length; i++){
     var marker = new google.maps.Marker;
     marker.setPosition({
@@ -260,9 +264,10 @@ function displayRed(map, lines)
         lng: Number(lines.Red[i].lng)
     });
     marker.setMap(map);
+    coordinates[i] = new google.maps.LatLng(lines.Red[i].lat, lines.Red[i].lng);
     }
           var path = new google.maps.Polyline({
-        path: lines.Red,
+        path: coordinates,
         geodesic: true,
         strokeColor: '#ff0000',
         strokeWeight: 2,

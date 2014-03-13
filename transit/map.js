@@ -219,6 +219,7 @@ function displayOrange(map, lines)
 }
 function displayBlue(map, lines)
 {
+    console.log(lines.Blue[i].lat);
       for(i = 0; i < 19; i++){
     marker = new google.maps.Marker;
     marker.setPosition({

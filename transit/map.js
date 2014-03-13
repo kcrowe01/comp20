@@ -211,8 +211,8 @@ function displayOrange(map)
     for(i = 0; i < 19; i++){
     marker = new google.maps.Marker;
     marker.setPosition({
-        lat: Orange[i].lat,
-        lng: Orange[i].lng
+        lat: lines.Orange[i].lat,
+        lng: lines.Orange[i].lng
     });
     marker.setMap(map);
     }
@@ -222,8 +222,8 @@ function displayBlue(map)
       for(i = 0; i < 19; i++){
     marker = new google.maps.Marker;
     marker.setPosition({
-        lat: Blue[i].lat,
-        lng: Blue[i].lng
+        lat: lines.Blue[i].lat,
+        lng: lines.Blue[i].lng
     });
     marker.setMap(map);
     }
@@ -233,8 +233,8 @@ function displayRed(map)
       for(i = 0; i < 19; i++){
     marker = new google.maps.Marker;
     marker.setPosition({
-        lat: Red[i].lat,
-        lng: Red[i].lng
+        lat: lines.Red[i].lat,
+        lng: lines.Red[i].lng
     });
     marker.setMap(map);
     }

@@ -145,8 +145,6 @@ lines = {
             lat: splitline[2],
             lng: splitline[3]
         }
-        console.log(splitline[0]);
-        console.log(lines.Blue);
         if(splitline[0] == "Blue"){
             lines.Blue.push(info);
         }
@@ -229,7 +227,7 @@ function displayOrange(map, lines)
 }
 function displayBlue(map, lines)
 {
-    console.log(lines.Blue);
+    console.log(lines.Blue[0].lat);
       for(i = 0; i < 19; i++){
     marker = new google.maps.Marker;
     marker.setPosition({

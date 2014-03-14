@@ -257,16 +257,18 @@ function makeTable(parsed, station)
             col = document.createElement('td');
             if((j % 4) == 0)
             {
-                console.log(parsed['line']);
-                col.appendChild(parsed['line']);
+                var line = createTextNode(parsed['line']);
+                col.appendChild(line);
             }
             else if((j % 4) == 1)
             {
-                col.appendChild(parsed['schedule'][i]['TripID']);
+                var id = createTextNode(parsed['schedule'][i]['TripID']);
+                col.appendChild(id);
             }
             else if((j % 4) == 2)
             {
-                col.appendChild(parsed['schedule'][i]['Destination']);
+                var destination = createTextNode(parsed['schedule'][i]['Destination']);
+                col.appendChild(destination);
             }
             else 
             {
@@ -274,7 +276,8 @@ function makeTable(parsed, station)
                 {
                     if(parsed['schedule'][i]['Predictions'][k]['Stop'] == station)
                     {
-                        col.appendChild(parsed['schedule'][i]['Predictions'][k]['Seconds'])
+                        var time = createTextNode(parsed['schedule'][i]['Predictions'][k]['Seconds']);
+                        col.appendChild(time);
                     }
                 }
             }

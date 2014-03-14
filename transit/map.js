@@ -208,8 +208,8 @@ function displayRed(map, lines)
                 infowindow[inneri].close();
                 infowindow[inneri].setContent("here");
                 infowindow[inneri].open(map, marker[inneri]);
-            }(i));
-        });
+            }
+        }(i));
     }
           var path = new google.maps.Polyline({
         path: coordinates,

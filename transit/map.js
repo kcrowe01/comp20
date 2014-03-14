@@ -192,7 +192,8 @@ function displayRed(map, lines)
     var infowindow = new Array(lines.Red.length);
     for(i = 0; i < lines.Red.length; i++){
         marker[i] = new google.maps.Marker({
-        icon: 'http://www.google.com/mapfiles/markerT.png'
+        icon: 'http://www.google.com/mapfiles/markerT.png',
+        title: lines.Red[i].station
         });
         marker[i].setPosition({
             lat: Number(lines.Red[i].lat),
@@ -206,7 +207,7 @@ function displayRed(map, lines)
         google.maps.event.addListener(marker[i], 'click', function(inneri) {
             return function() {
                 infowindow[inneri].close();
-                infowindow[inneri].setContent("here");
+                infowindow[inneri].setContent(marker[inneri].title);
                 infowindow[inneri].open(map, marker[inneri]);
             }
         }(i));

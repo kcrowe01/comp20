@@ -142,7 +142,7 @@ function displayOrange(map, lines)
     infowindow[i] = new google.maps.InfoWindow({
         position: marker[i].getPosition()
     });
-        google.maps.event.addListener(marker, 'click', function window(inneri) {
+        google.maps.event.addListener(marker[i], 'click', function window(inneri) {
             return function(){
                 infowindow[inneri].close();
                 infowindow[inneri].setContent(marker[inneri].title);
@@ -177,7 +177,7 @@ function displayBlue(map, lines)
         infowindow[i] = new google.maps.InfoWindow({
             position: marker[i].getPosition()
         });
-        google.maps.event.addListener(marker, 'click', function (inneri) {
+        google.maps.event.addListener(marker[i], 'click', function (inneri) {
             return function() {
                 infowindow[inneri].close();
                 infowindow[inneri].setContent(marker[inneri].title);

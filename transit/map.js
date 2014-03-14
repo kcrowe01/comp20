@@ -310,6 +310,7 @@ function distance( marker)
         return this * Math.PI / 180;
     }
     var mindist = 999999;
+    var index = 0;
     for(var i = 0; i < marker.length; i++)
     {
         var lat2 = myLat; 
@@ -333,11 +334,12 @@ function distance( marker)
         if(d < mindist)
         {
             mindist = d;
+            index = i;
         }
     }
 
  
 
-alert(d);
+alert("Closest Station at " marker[index].title " " d "miles away.");
 }
 

@@ -246,7 +246,7 @@ function displayRed(map, lines, parsed)
 
 function makeTable(parsed, station)
 {
-    var table = createElement('table');
+    var table = createDOMElement('table');
     var tab = createElement('tbody');
     var row, col;
     for(var i = 0; i < parsed['schedule'].length; i++)

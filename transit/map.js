@@ -137,7 +137,7 @@ function displayOrange(map, lines)
     });
     marker[i].setMap(map);
     coordinates[i] = new google.maps.LatLng(lines.Orange[i].lat, lines.Orange[i].lng);
-    infowindow = new google.maps.InfoWindow({
+    var infowindow = new google.maps.InfoWindow({
         position: marker[i].getPostion()
     });
         google.maps.event.addDomListener(marker[i], 'click', function window() {
@@ -199,7 +199,7 @@ function displayRed(map, lines)
         });
         marker[i].setMap(map);
         coordinates[i] = new google.maps.LatLng(lines.Red[i].lat, lines.Red[i].lng);
-        infowindow = new google.maps.InfoWindow({
+        var infowindow = new google.maps.InfoWindow({
             position: marker[i].getPosition()
         });
         google.maps.event.addDomListener(marker[i], 'click', function window() {

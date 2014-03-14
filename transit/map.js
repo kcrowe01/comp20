@@ -277,7 +277,7 @@ function makeTable(parsed, station)
                     console.log(station);
                     if(parsed['schedule'][i]['Predictions'][k]['Stop'] == station)
                     {
-                        console.log['found station'];
+                        console.log('found station');
                         var time = document.createTextNode(parsed['schedule'][i]['Predictions'][k]['Seconds']);
                         col.appendChild(time);
                     }

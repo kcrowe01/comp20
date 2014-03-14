@@ -154,7 +154,7 @@ function displayBlue(map, lines)
 {
       var coordinates = new Array(lines.Blue.length);
       for(i = 0; i < lines.Blue.length; i++){
-      marker = new google.maps.Marker({
+        var marker = new google.maps.Marker({
             icon: 'http://www.google.com/mapfiles/markerT.png'
         });
         marker.setPosition({
@@ -181,7 +181,7 @@ function displayRed(map, lines)
 {
     var coordinates = new Array(lines.Red.length);
     for(i = 0; i < lines.Red.length; i++){
-    marker = new google.maps.Marker({
+        var marker = new google.maps.Marker({
         icon: 'http://www.google.com/mapfiles/markerT.png'
     });
     marker.setPosition({

@@ -114,13 +114,13 @@ lines = {
     var parsed = JSON.parse(str);
     console.log(parsed['line']); 
     if(parsed['line'] == "orange"){
-        displayOrange(map, lines, str);
+        displayOrange(map, lines, parsed);
     }
     else if(parsed['line'] == "blue"){
-        displayBlue(map, lines, str);
+        displayBlue(map, lines, parsed);
     }
     else if(parsed['line'] == "red"){
-        displayRed(map, lines, str);
+        displayRed(map, lines, parsed);
     }
 }
 function displayOrange(map, lines, parsed)
@@ -249,7 +249,7 @@ function makeTable(parsed, station)
     var table = document.createElement('table');
     var tab = document.createElement('tbody');
     var row, col;
-    for(var i = 0; i < parsed['schedule'].length; i++)
+    for(var i = 0; i < parsed["schedule"].length; i++)
     {
        row = document.createElement('tr');
        for(var j = 0; j < 4; j++)

@@ -140,7 +140,7 @@ function displayOrange(map, lines)
     var infowindow = new google.maps.InfoWindow({
         position: marker[i].getPosition()
     });
-        google.maps.event.addDomListener(marker[i], 'click', function window() {
+        google.maps.event.addListener(marker[i], 'click', function window() {
                 infowindow.close();
                 infowindow.setContent("here");
                 infowindow.open(map, marker[i]);
@@ -171,7 +171,7 @@ function displayBlue(map, lines)
         var infowindow = new google.maps.InfoWindow({
             position: marker[i].getPosition()
         });
-        google.maps.event.addDomListener(marker[i], 'click', function window() {
+        google.maps.event.addListener(marker[i], 'click', function window() {
                 infowindow.close();
                 infowindow.setContent("here");
                 infowindow.open(map, marker[i]);
@@ -202,7 +202,7 @@ function displayRed(map, lines)
         var infowindow = new google.maps.InfoWindow({
             position: marker[i].getPosition()
         });
-        google.maps.event.addDomListener(marker[i], 'click', function window() {
+        google.maps.event.addListener(marker[i], 'click', function window() {
                 infowindow.close();
                 infowindow.setContent("here");
                 infowindow.open(map, marker[i]);

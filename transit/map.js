@@ -314,8 +314,8 @@ function distance( marker)
     {
         var lat2 = myLat; 
         var lon2 = myLng; 
-        var lat1 = marker[i].getPosition(); 
-        var lon1 = marker[i].getPosition();
+        var lat1 = marker[i].getPosition().k; 
+        var lon1 = marker[i].getPosition().A;
         console.log(lat1);
         console.log(lon1); 
 

@@ -1,0 +1,15 @@
+Kenny Crowell
+Assignment 3 Transit
+
+The webpage successfully renders the google map and is centered on the users
+current position using the navigator.geolocation. A marker displays the users
+location, and clicking on this marker displays the current lat/lng. 
+XMLhttprequest is used to get information from the mbta rodeo server. The line
+recieved is rendered on the map with markers at each station and a polyline 
+connects the stations. Clicking on the station marker gives the line, destination
+and arrival time of the trains. The page displays the closest subway station to
+the user's current position (in miles).
+
+I collaborated with Nate Winters and Matt Long.
+
+This assignment took me approximately 20 hours to complete.

@@ -191,7 +191,7 @@ function displayRed(map, lines)
     var marker = new Array(lines.Red.length);
     var infowindow = new Array(lines.Red.length);
     for(i = 0; i < lines.Red.length; i++){
-        var marker[i] = new google.maps.Marker({
+        marker[i] = new google.maps.Marker({
         icon: 'http://www.google.com/mapfiles/markerT.png'
         });
         marker[i].setPosition({

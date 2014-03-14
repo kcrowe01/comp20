@@ -188,24 +188,27 @@ function displayBlue(map, lines)
 function displayRed(map, lines)
 {
     var coordinates = new Array(lines.Red.length);
-    //var marker = new Array(lines.Red.length);
+    var marker = new Array(lines.Red.length);
+    var infowindow = new Array(lines.Red.length);
     for(i = 0; i < lines.Red.length; i++){
-        var marker = new google.maps.Marker({
+        var marker[i] = new google.maps.Marker({
         icon: 'http://www.google.com/mapfiles/markerT.png'
         });
-        marker.setPosition({
+        marker[i].setPosition({
             lat: Number(lines.Red[i].lat),
             lng: Number(lines.Red[i].lng)
         });
-        marker.setMap(map);
+        marker[i].setMap(map);
         coordinates[i] = new google.maps.LatLng(lines.Red[i].lat, lines.Red[i].lng);
-        var infowindow = new google.maps.InfoWindow({
-            position: marker.getPosition()
+        infowindow[i] = new google.maps.InfoWindow({
+            position: marker[i].getPosition()
         });
-        google.maps.event.addListener(marker, 'click', function window() {
-                infowindow.close();
-                infowindow.setContent("here");
-                infowindow.open(map, marker);
+        google.maps.event.addListener(marker[i], 'click', function(inneri) {
+            return function() {
+                infowindow[inneri].close();
+                infowindow[inneri].setContent("here");
+                infowindow[inneri].open(map, marker[inneri]);
+            }(i));
         });
     }
           var path = new google.maps.Polyline({

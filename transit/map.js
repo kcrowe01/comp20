@@ -139,7 +139,7 @@ function displayOrange(map, lines)
     marker[i].setMap(map);
     coordinates[i] = new google.maps.LatLng(lines.Orange[i].lat, lines.Orange[i].lng);
     infowindow[i] = new google.maps.InfoWindow({
-        position: marker[i].getPostion();
+        position: marker[i].getPostion()
     });
         google.maps.event.addDomListener(marker[i], 'click', function window() {
                 infowindow[i].setContent("here");

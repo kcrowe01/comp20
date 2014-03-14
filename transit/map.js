@@ -151,6 +151,7 @@ function displayOrange(map, lines, parsed)
             }
         }(i));
     }
+    distance(marker);
         var path = new google.maps.Polyline({
         path: coordinates,
         geodesic: true,
@@ -187,6 +188,7 @@ function displayBlue(map, lines, parsed)
             }
         }(i));
       }
+      distance(marker);
       var path = new google.maps.Polyline({
         path: coordinates,
         geodesic: true,
@@ -229,6 +231,7 @@ function displayRed(map, lines, parsed)
             }
         }(i));
     }
+        distance(marker);
           var path = new google.maps.Polyline({
         path: coordinates,
         geodesic: true,

@@ -22,7 +22,7 @@ function loadMap()
         placeStation(map);
     })
 }
-google.maps.event.addDomListener(window, 'load', loadMap);
+//google.maps.event.addDomListener(window, 'load', loadMap);
 
 function placeStation(map)
 {    

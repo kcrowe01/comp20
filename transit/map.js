@@ -110,9 +110,7 @@ lines = {
         alert('Error retrieving data from the server.');
         return;
     }
-    console.log(str);
     var parsed = JSON.parse(str);
-    console.log(parsed['line']); 
     if(parsed['line'] == "orange"){
         displayOrange(map, lines, parsed);
     }
@@ -267,7 +265,6 @@ function makeTable(parsed, station)
             col = document.createElement('td');
                 for( var k = 0; k < parsed['schedule'][i]['Predictions'].length; k++)
                 {
-                    console.log(station);
                     if(parsed['schedule'][i]['Predictions'][k]['Stop'] == station)
                     {
                         foundstation = 1;

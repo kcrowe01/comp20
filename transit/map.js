@@ -137,7 +137,7 @@ function displayOrange(map, lines)
     marker.setMap(map);
     coordinates[i] = new google.maps.LatLng(lines.Orange[i].lat, lines.Orange[i].lng);
     var infowindow = new google.maps.InfoWindow();
-        google.maps.event.addDomListener(marker, 'click', function window(lines) {
+        google.maps.event.addDomListener(marker, 'click', function window(lines, i) {
                 infowindow.setContent(lines.Orange[i].station);
                 infowindow.open(map, marker);
         });
@@ -164,7 +164,7 @@ function displayBlue(map, lines)
         marker.setMap(map);
         coordinates[i] = new google.maps.LatLng(lines.Blue[i].lat, lines.Blue[i].lng);
         var infowindow = new google.maps.InfoWindow();
-        google.maps.event.addDomListener(marker, 'click', function window(lines) {
+        google.maps.event.addDomListener(marker, 'click', function window(lines, i) {
                 infowindow.setContent(lines.Blue[i].station);
                 infowindow.open(map, marker);
         });
@@ -191,7 +191,7 @@ function displayRed(map, lines)
         marker.setMap(map);
         coordinates[i] = new google.maps.LatLng(lines.Red[i].lat, lines.Red[i].lng);
         var infowindow = new google.maps.InfoWindow();
-        google.maps.event.addDomListener(marker, 'click', function window(lines) {
+        google.maps.event.addDomListener(marker, 'click', function window(lines, i) {
                 infowindow.setContent(lines.Red[i].station);
                 infowindow.open(map, marker);
         });

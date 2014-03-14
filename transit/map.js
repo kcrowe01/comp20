@@ -246,15 +246,15 @@ function displayRed(map, lines, parsed)
 
 function makeTable(parsed, station)
 {
-    var table = createDOMElement('table');
-    var tab = createElement('tbody');
+    var table = document.createElement('table');
+    var tab = document.createElement('tbody');
     var row, col;
     for(var i = 0; i < parsed['schedule'].length; i++)
     {
-       row = createElement('tr');
+       row = document.createElement('tr');
        for(var j = 0; j < 4; j++)
        {
-            col = createElement('td');
+            col = document.createElement('td');
             if((j % 4) == 0)
             {
                 col.appendChild(parsed['line']);

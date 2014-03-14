@@ -170,7 +170,7 @@ function displayBlue(map, lines)
         marker[i].setMap(map);
         coordinates[i] = new google.maps.LatLng(lines.Blue[i].lat, lines.Blue[i].lng);
         infowindow[i] = new google.maps.InfoWindow({
-            position: marker[i].getPosition();
+            position: marker[i].getPosition()
         });
         google.maps.event.addDomListener(marker[i], 'click', function window() {
                 infowindow[i].setContent("here");

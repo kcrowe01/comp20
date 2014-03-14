@@ -114,16 +114,16 @@ lines = {
     var parsed = JSON.parse(str);
     console.log(parsed['line']); 
     if(parsed['line'] == "orange"){
-        displayOrange(map, lines);
+        displayOrange(map, lines, str);
     }
     else if(parsed['line'] == "blue"){
-        displayBlue(map, lines);
+        displayBlue(map, lines, str);
     }
     else if(parsed['line'] == "red"){
-        displayRed(map, lines);
+        displayRed(map, lines, str);
     }
 }
-function displayOrange(map, lines)
+function displayOrange(map, lines, parsed)
 {
     var coordinates = new Array(lines.Orange.length);
     var marker = new Array(lines.Orange.length);
@@ -158,7 +158,7 @@ function displayOrange(map, lines)
       })
       path.setMap(map);
 }
-function displayBlue(map, lines)
+function displayBlue(map, lines, parsed)
 {
       var coordinates = new Array(lines.Blue.length);
       var marker = new Array(lines.Blue.length);
@@ -193,13 +193,12 @@ function displayBlue(map, lines)
       })
       path.setMap(map);
 }
-function displayRed(map, lines)
+function displayRed(map, lines, parsed)
 {
     var coordinates = new Array(17);
     var coordinates2 = new Array(6);
     var marker = new Array(lines.Red.length);
     var infowindow = new Array(lines.Red.length);
-    var content = '<table><tr><td>1.1</td><td>1.2</td></tr><tr><td>2.1</td><td>2.2</td></tr></table>'
     for(i = 0; i < lines.Red.length; i++){
         marker[i] = new google.maps.Marker({
         icon: 'http://www.google.com/mapfiles/markerT.png',
@@ -222,6 +221,7 @@ function displayRed(map, lines)
         google.maps.event.addListener(marker[i], 'click', function(inneri) {
             return function() {
                 infowindow[inneri].close();
+                var content = makeTable(parsed, marker[inneri].station);
                 infowindow[inneri].setContent(content);
                 infowindow[inneri].open(map, marker[inneri]);
             }
@@ -243,5 +243,45 @@ function displayRed(map, lines)
         });
         path2.setMap(map);
 }
- 
+
+function makeTable(parsed, station)
+{
+    var table = createElement('table');
+    var tab = createElement('tbody');
+    var row, col;
+    for(var i = 0; i < parsed['schedule'].length; i++)
+    {
+       row = createElement('tr');
+       for(var j = 0; j < 4; j++)
+       {
+            col = createElement('td');
+            if((j % 4) == 0)
+            {
+                col.appendChild(parsed['line']);
+            }
+            else if((j % 4) == 1)
+            {
+                col.appendChild(parsed['schedule'][i]['TripID']);
+            }
+            else if((j % 4) == 2)
+            {
+                col.appendChild(parsed['schedule'][i]['Destination']);
+            }
+            else 
+            {
+                for( var k = 0; k < parsed['schedule'][i]['Predictions'].length; k++)
+                {
+                    if(parsed['schedule'][i]['Predictions'][k]['Stop'] == station)
+                    {
+                        col.appendChild(parsed['schedule'][i]['Predictions'][k]['Seconds'])
+                    }
+                }
+            }
+            row.appendChild(col);
+        }
+        tab.appendChild(row);
+    }
+    table.appendChild(tab);
+    return table;
+} 
 

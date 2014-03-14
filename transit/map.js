@@ -221,7 +221,7 @@ function displayRed(map, lines, parsed)
         google.maps.event.addListener(marker[i], 'click', function(inneri) {
             return function() {
                 infowindow[inneri].close();
-                var content = makeTable(parsed, marker[inneri].station);
+                var content = makeTable(parsed, lines.Red[inneri].station);
                 infowindow[inneri].setContent(content);
                 infowindow[inneri].open(map, marker[inneri]);
             }

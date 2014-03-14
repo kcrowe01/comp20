@@ -318,7 +318,7 @@ function distance( marker)
         var lat1 = marker[i].getPosition().k; 
         var lon1 = marker[i].getPosition().A; 
 
-        var R = 3958.756; // mi 
+        var R = 6371; // km 
 
         var x1 = lat2-lat1;
         var dLat = x1.toRad();  
@@ -335,9 +335,10 @@ function distance( marker)
             index = i;
         }
     }
+    mindist = mindist * 0.621371;
 
  
 
-alert("Closest Station at " + marker[index].title + " " + Number(d) + "miles away.");
+alert("Closest Station at " + marker[index].title + " " + Number(mindist) + "miles away.");
 }
 

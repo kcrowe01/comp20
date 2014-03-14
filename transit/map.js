@@ -195,7 +195,8 @@ function displayBlue(map, lines)
 }
 function displayRed(map, lines)
 {
-    var coordinates = new Array(lines.Red.length);
+    var coordinates = new Array(17);
+    var coordinates2 = new Array(6);
     var marker = new Array(lines.Red.length);
     var infowindow = new Array(lines.Red.length);
     for(i = 0; i < lines.Red.length; i++){
@@ -208,7 +209,12 @@ function displayRed(map, lines)
             lng: Number(lines.Red[i].lng)
         });
         marker[i].setMap(map);
+        if(i < 17){
         coordinates[i] = new google.maps.LatLng(lines.Red[i].lat, lines.Red[i].lng);
+        }  
+        else {
+            coordinates2[i-16] = new google.maps.LatLng(lines.Red[i].lat, lines.Red[i].lng);
+        } 
         infowindow[i] = new google.maps.InfoWindow({
             position: marker[i].getPosition()
         });
@@ -225,8 +231,16 @@ function displayRed(map, lines)
         geodesic: true,
         strokeColor: '#ff0000',
         strokeWeight: 5,
-      })
+      });
       path.setMap(map);
+      coordinates2[0] = new google.maps.LatLng(lines.Red[12].lat, lines.Red[12].lng); 
+        var path2 = new google.maps.Polyline({
+            path: coordinates2,
+            geodesic: true,
+            strokeColor: '#ff0000',
+            strokeWeight: 5
+        });
+        path2.setMap(map);
 }
  
 

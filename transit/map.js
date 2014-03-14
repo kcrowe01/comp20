@@ -314,8 +314,10 @@ function distance( marker)
     {
         var lat2 = myLat; 
         var lon2 = myLng; 
-        var lat1 = marker[i].getPosition().lat; 
-        var lon1 = marker[i].getPosition().lng; 
+        var lat1 = marker[i].getPosition(); 
+        var lon1 = marker[i].getPosition();
+        console.log(lat1);
+        console.log(lon1); 
 
         var R = 3958.756; // mi 
 

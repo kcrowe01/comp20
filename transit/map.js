@@ -257,6 +257,7 @@ function makeTable(parsed, station)
             col = document.createElement('td');
             if((j % 4) == 0)
             {
+                console.log(parsed['line']);
                 col.appendChild(parsed['line']);
             }
             else if((j % 4) == 1)

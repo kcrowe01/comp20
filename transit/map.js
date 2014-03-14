@@ -340,6 +340,6 @@ function distance( marker)
 
  
 
-alert("Closest Station at " marker[index].title " " d "miles away.");
+alert("Closest Station at " + marker[index].title + " " + d + "miles away.");
 }
 

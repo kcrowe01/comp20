@@ -145,7 +145,8 @@ function displayOrange(map, lines, parsed)
         google.maps.event.addListener(marker[i], 'click', function window(inneri) {
             return function(){
                 infowindow[inneri].close();
-                infowindow[inneri].setContent(marker[inneri].title);
+                var content = makeTable(parsed, lines.Orange[inneri].station);
+                infowindow[inneri].setContent(content);
                 infowindow[inneri].open(map, marker[inneri]);
             }
         }(i));
@@ -180,7 +181,8 @@ function displayBlue(map, lines, parsed)
         google.maps.event.addListener(marker[i], 'click', function (inneri) {
             return function() {
                 infowindow[inneri].close();
-                infowindow[inneri].setContent(marker[inneri].title);
+                var content = makeTable(parsed, lines.Blue[inneri].station);
+                infowindow[inneri].setContent(content);
                 infowindow[inneri].open(map, marker[inneri]);
             }
         }(i));

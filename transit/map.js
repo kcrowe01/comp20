@@ -252,6 +252,10 @@ function makeTable(parsed, station)
     var tab = document.createElement('tbody');
     var row, col;
     var foundstation = 0;
+    row = document.createElement('tr');
+    stationName = document.createTextNode(station);
+    row.appendChild(stationName);
+    tab.appendChild(row);
     for(var i = 0; i < parsed["schedule"].length; i++)
     {
        row = document.createElement('tr');

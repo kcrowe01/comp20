@@ -127,15 +127,20 @@ function displayOrange(map, lines)
 {
     var coordinates = new Array(lines.Orange.length);
     for(i = 0; i < lines.Orange.length; i++){
-    var marker = new google.maps.Marker({
+        var marker = new google.maps.Marker({
         icon: 'http://www.google.com/mapfiles/markerT.png'
-    });
+        });
     marker.setPosition({
         lat: Number(lines.Orange[i].lat),
         lng: Number(lines.Orange[i].lng)
     });
     marker.setMap(map);
     coordinates[i] = new google.maps.LatLng(lines.Orange[i].lat, lines.Orange[i].lng);
+    var infowindow = new google.maps.InfoWindow();
+        google.maps.event.addDomListener(marker, 'click', function() {
+                infowindow.setContent(lines.Orange[i].station);
+                infowindow.open(map, marker);
+        });
     }
         var path = new google.maps.Polyline({
         path: coordinates,
@@ -149,7 +154,7 @@ function displayBlue(map, lines)
 {
       var coordinates = new Array(lines.Blue.length);
       for(i = 0; i < lines.Blue.length; i++){
-        var marker = new google.maps.Marker({
+      marker = new google.maps.Marker({
             icon: 'http://www.google.com/mapfiles/markerT.png'
         });
         marker.setPosition({
@@ -158,6 +163,11 @@ function displayBlue(map, lines)
         });
         marker.setMap(map);
         coordinates[i] = new google.maps.LatLng(lines.Blue[i].lat, lines.Blue[i].lng);
+        var infowindow = new google.maps.InfoWindow();
+        google.maps.event.addDomListener(marker, 'click', function() {
+                infowindow.setContent(lines.Blue[i].station);
+                infowindow.open(map, marker);
+        });
       }
       var path = new google.maps.Polyline({
         path: coordinates,
@@ -169,9 +179,9 @@ function displayBlue(map, lines)
 }
 function displayRed(map, lines)
 {
-     var coordinates = new Array(lines.Red.length);
-      for(i = 0; i < lines.Red.length; i++){
-    var marker = new google.maps.Marker({
+    var coordinates = new Array(lines.Red.length);
+    for(i = 0; i < lines.Red.length; i++){
+    marker = new google.maps.Marker({
         icon: 'http://www.google.com/mapfiles/markerT.png'
     });
     marker.setPosition({
@@ -180,6 +190,11 @@ function displayRed(map, lines)
     });
     marker.setMap(map);
     coordinates[i] = new google.maps.LatLng(lines.Red[i].lat, lines.Red[i].lng);
+    var infowindow = new google.maps.InfoWindow();
+        google.maps.event.addDomListener(marker, 'click', function() {
+                infowindow.setContent(lines.Red[i].station);
+                infowindow.open(map, marker);
+        });
     }
           var path = new google.maps.Polyline({
         path: coordinates,

@@ -127,6 +127,7 @@ function displayOrange(map, lines)
 {
     var coordinates = new Array(lines.Orange.length);
     var marker = new Array(lines.Orange.length);
+    var infowindow = new Array(lines.Orange.length);
     for(i = 0; i < lines.Orange.length; i++){
         marker[i] = new google.maps.Marker({
         icon: 'http://www.google.com/mapfiles/markerT.png'
@@ -137,10 +138,12 @@ function displayOrange(map, lines)
     });
     marker[i].setMap(map);
     coordinates[i] = new google.maps.LatLng(lines.Orange[i].lat, lines.Orange[i].lng);
-    var infowindow = new google.maps.InfoWindow();
+    infowindow[i] = new google.maps.InfoWindow({
+        position: marker[i].getPostion();
+    });
         google.maps.event.addDomListener(marker[i], 'click', function window() {
-                infowindow.setContent("here");
-                infowindow.open(map, marker[i]);
+                infowindow[i].setContent("here");
+                infowindow[i].open(map, marker[i]);
         });
     }
         var path = new google.maps.Polyline({
@@ -155,6 +158,7 @@ function displayBlue(map, lines)
 {
       var coordinates = new Array(lines.Blue.length);
       var marker = new Array(lines.Blue.length);
+      var infowindow = new Array(lines.Blue.length);
       for(i = 0; i < lines.Blue.length; i++){
         marker[i] = new google.maps.Marker({
             icon: 'http://www.google.com/mapfiles/markerT.png'
@@ -165,10 +169,12 @@ function displayBlue(map, lines)
         });
         marker[i].setMap(map);
         coordinates[i] = new google.maps.LatLng(lines.Blue[i].lat, lines.Blue[i].lng);
-        var infowindow = new google.maps.InfoWindow();
+        infowindow[i] = new google.maps.InfoWindow({
+            position: marker[i].getPosition();
+        });
         google.maps.event.addDomListener(marker[i], 'click', function window() {
-                infowindow.setContent("here");
-                infowindow.open(map, marker[i]);
+                infowindow[i].setContent("here");
+                infowindow[i].open(map, marker[i]);
         });
       }
       var path = new google.maps.Polyline({
@@ -183,6 +189,7 @@ function displayRed(map, lines)
 {
     var coordinates = new Array(lines.Red.length);
     var marker = new Array(lines.Red.length);
+    var infowindow = new Array(lines.Red.length);
     for(i = 0; i < lines.Red.length; i++){
         marker[i] = new google.maps.Marker({
         icon: 'http://www.google.com/mapfiles/markerT.png'
@@ -193,10 +200,12 @@ function displayRed(map, lines)
         });
         marker[i].setMap(map);
         coordinates[i] = new google.maps.LatLng(lines.Red[i].lat, lines.Red[i].lng);
-        var infowindow = new google.maps.InfoWindow();
+        infowindow[i] = new google.maps.InfoWindow({
+            position: marker[i].getPosition()
+        });
         google.maps.event.addDomListener(marker[i], 'click', function window() {
-                infowindow.setContent("here");
-                infowindow.open(map, marker[i]);
+                infowindow[i].setContent("here");
+                infowindow[i].open(map, marker[i]);
         });
     }
           var path = new google.maps.Polyline({

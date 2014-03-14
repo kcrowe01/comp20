@@ -249,41 +249,46 @@ function makeTable(parsed, station)
     var table = document.createElement('table');
     var tab = document.createElement('tbody');
     var row, col;
+    var foundstation = 0;
     for(var i = 0; i < parsed["schedule"].length; i++)
     {
        row = document.createElement('tr');
        for(var j = 0; j < 4; j++)
        {
             col = document.createElement('td');
-            if((j % 4) == 0)
-            {
-                var line = document.createTextNode(parsed['line']);
-                col.appendChild(line);
-            }
-            else if((j % 4) == 1)
-            {
-                var id = document.createTextNode(parsed['schedule'][i]['TripID']);
-                col.appendChild(id);
-            }
-            else if((j % 4) == 2)
-            {
-                var destination = document.createTextNode(parsed['schedule'][i]['Destination']);
-                col.appendChild(destination);
-            }
-            else 
-            {   console.log("in else");
                 for( var k = 0; k < parsed['schedule'][i]['Predictions'].length; k++)
                 {
                     console.log(station);
                     if(parsed['schedule'][i]['Predictions'][k]['Stop'] == station)
                     {
-                        console.log('found station');
-                        var time = document.createTextNode(parsed['schedule'][i]['Predictions'][k]['Seconds']);
-                        col.appendChild(time);
+                        foundstation = 1;
+                        if((j % 4) == 0)
+                        {
+                            var line = document.createTextNode(parsed['line']);
+                            col.appendChild(line);
+                        }
+                        else if((j % 4) == 1)
+                        {
+                            var id = document.createTextNode(parsed['schedule'][i]['TripID']);
+                            col.appendChild(id);
+                        }
+                        else if((j % 4) == 2)
+                        {
+                            var destination = document.createTextNode(parsed['schedule'][i]['Destination']);
+                            col.appendChild(destination);
+                        }
+                        else
+                        {
+                            var time = document.createTextNode(parsed['schedule'][i]['Predictions'][k]['Seconds']);
+                            col.appendChild(time);
+                        }   
                     }
                 }
+            if(foundstation == 1)
+            {    
+                row.appendChild(col);
             }
-            row.appendChild(col);
+            foundstation = 0;
         }
         tab.appendChild(row);
     }

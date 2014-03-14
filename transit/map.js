@@ -271,10 +271,10 @@ function makeTable(parsed, station)
                 col.appendChild(destination);
             }
             else 
-            {
+            {   console.log("in else");
                 for( var k = 0; k < parsed['schedule'][i]['Predictions'].length; k++)
                 {
-                    console.log[station];
+                    console.log(station);
                     if(parsed['schedule'][i]['Predictions'][k]['Stop'] == station)
                     {
                         console.log['found station'];

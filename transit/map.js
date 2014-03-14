@@ -22,7 +22,6 @@ function loadMap()
         placeStation(map);
     })
 }
-//google.maps.event.addDomListener(window, 'load', loadMap);
 
 function placeStation(map)
 {    
@@ -332,7 +331,7 @@ function distance( marker)
             index = i;
         }
     }
-    mindist = mindist * 0.621371;
+    mindist = mindist * 0.621371; //conversion to miles
 
  
 

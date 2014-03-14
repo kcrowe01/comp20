@@ -301,4 +301,38 @@ function makeTable(parsed, station)
     table.appendChild(tab);
     return table;
 } 
+function distance( marker)
+{
+    Number.prototype.toRad = function() {
+        return this * Math.PI / 180;
+    }
+    var mindist = 999999;
+    for(var i = 0; i < marker.length; i++)
+    {
+        var lat2 = myLat; 
+        var lon2 = myLng; 
+        var lat1 = marker[i].getPosition().lat; 
+        var lon1 = marker[i].getPosition().lng; 
+
+        var R = 3958.756; // mi 
+
+        var x1 = lat2-lat1;
+        var dLat = x1.toRad();  
+        var x2 = lon2-lon1;
+        var dLon = x2.toRad();  
+        var a = Math.sin(dLat/2) * Math.sin(dLat/2) + 
+                Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) * 
+                Math.sin(dLon/2) * Math.sin(dLon/2);  
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+        var d = R * c;
+        if(d < mindist)
+        {
+            mindist = d;
+        }
+    }
+
+ 
+
+alert(d);
+}
 

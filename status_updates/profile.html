@@ -10,16 +10,21 @@
 		var text = document.createTextNode(msg);
 		var list = document.getElementById("status");
 		var date =  new Date();
+		temp = date.getMonth() + 1;
+		str = temp + "/";
+		var month = document.createTextNode(temp + "/");
+		temp = date.getDate();
+		str += temp + "/";
+		var day = document.createTextNode(temp + "/");
 		var temp = date.getFullYear();
 		var year = document.createTextNode(temp + " ");
-		temp = date.getMonth();
-		var month = document.createTextNode(temp + "/");
-		temp = date.getDay();
-		var day = document.createTextNode(temp + "/");
-		temp = date.getMinutes();
-		var minutes = document.createTextNode(temp + " - ");
+		str += temp + " ";
 		temp = date.getHours();
 		var hours = document.createTextNode(temp + ":");
+		str += temp + ":"
+		temp = date.getMinutes();
+		var minutes = document.createTextNode(temp + " - ");
+		str += temp + " - ";
 		var newline = document.createElement("br");
 		var parent = list.firstChild;
 				list.insertBefore(newline, list.childNodes[0]);
@@ -29,13 +34,27 @@
 		list.insertBefore(year, list.childNodes[0]);
 		list.insertBefore(day, list.childNodes[0]);
 		list.insertBefore(month, list.childNodes[0]);
-		
+		str += msg;
+		localStorage[date.getTime()] = str;
 
+	}
+	function init()
+	{
+		output = "";
+		for(key in localStorage) {
+			newline = document.createElement("br");
+			output = localStorage[key];
+			list = document.getElementById("status");
+			text = document.createTextNode(output);
+			list.insertBefore(newline, list.childNodes[0]);
+			list.insertBefore(text, list.childNodes[0]);
+		}
+		
 	}
 	</script>
 </head>
 
-<body>
+<body onload="init()">
 	<h1>Fecebook</h1>
 	<div id="nav">
 		<ul>

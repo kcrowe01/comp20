@@ -342,9 +342,7 @@ function distance( marker)
  
 
 alert("Closest Station at " + marker[index].title + " " + Number(mindist) + "miles away.");
-<<<<<<< HEAD
+
 }
 
-=======
 
->>>>>>> master

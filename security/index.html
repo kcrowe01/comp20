@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>GameCenter Security</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1> Security Assessment of Gamecenter </h1>
+	<p> Kenneth Crowell - 4/24/2014 </p>
+	<p> Comp 20 - Web Programming </p>
+	<p> Assignment 5</p>
+	<h2> Introduction </h2>
+	<p> This page assesses the security of the <A href="gentle-shore-9330.herokuapp.com"> 2048 Gamecenter </A> application created by Nicole Gonzalez for assignment #4 in Comp20 Web Programming. This is a web application that saves scores for the game <A href="http://gabrielecirulli.github.io/2048/"> 2048 </A> created by <A href="http://gabrielecirulli.com/"> Gabrielle Cirulli </A>. Along with saving scores, it also provides JSON API that can be used to get the scores, timestamp, and final game-boards of a specific user. At this time however, it is not completely secure and can be tampered with by someone who knows it's vulnerabilities. This assessment focuses on vulnerabilities found in the code such as not checking the information sent in a POST. </p>
+	<h2> Methodology</h2>
+	<p> The intial testing strategy used to determine vulnerabilities in this application was "black box testing", using only what an attacker would have. This was accomplished by using the "curl" tool to post data to the application. I then reviewed the source code to expose errors that would not be obvious without having seen the code.</p> 
+	<h2> Absract of Findings </h2>
+	<p> Most of the vulnerabilities found in this application are caused by the lack of checking user input. Not doing this allows an attacker to edit the page and create input data that other programs do not expect to handle. This can cause problems for other sites that also do not check input data obtained from this application. Adding code that checks the input for these types of attacks should be a fairly simple fix for this application.
+	<h2> Issues Found </h2>
+	<div id='issues'>
+	<h3> Cross Site Scripting </h3>
+	<p>- Affects GET API</p>
+	<p>- Security Threat HIGH </p>
+	<p> This issue makes the Gamecenter app extremely vulnerable to attacks using the POST API such as the attack pictured below</p> 
+	<p> <img src='youtubecurl.png'></img></p>
+	<p> This attack places a script within the database that, when loaded on the root html page, redirects to a youtube page. This kind of attack could be very harmful to another page that uses the GET API as well because it could load values from the database that were not what the user was expecting, such as the script that was used in this example. Injecting a script into the database allows the attacker to insert any html of javascript that they desire. This can be avoided by checking the external input taken in by a POST command and looking for dangerous characters such as "<" and ">" </p>
+	<h3> No Authentication Necessarry </h3>
+	<p>- Affects POST API</p>
+	<p>- Security Threat MEDIUM </p>
+	<p> Another security issue with this app is the fact that it does not check the credentials of the client attempting to use it. While this allows easy access to those who want to use this app it can also be a security concern. This page allows Cross Origin Resource Sharing for all domains(shown below).
+	</p>
+	<p> <img src='Allow_origins.png'></img> <img src='Allow_2048.png'></img></p>
+	<p> This means it can be accessed by any other domain, even those that are malicious. This also means that scores posted to this page may not be realistic, which would defeat the purpose of the app. In order to reduce the danger of this it would be a good idea to check for a key that has provided to the user. It would also be a good idea to only allow certain domains to post to this app. For example, this app is used for 2048 scores so it would be a good idea to only allow the domain that the 2048 game is played on.</p> 
+	<h3> Overloading Database </h3>
+	<p>- Affects POST API</p>
+	<p>- Security Threat MEDIUM</p>
+	<p> Another flaw of this application is that it does not limit the number of posts from a certain user. This allows someone to fill up the entire database with whatever data they choose. This will cause the app to not work as intended because future scores will no longer be able to be saved in the database. A program running a simple loop as shown below can easily fill up the database so that no other user may post to it.</p>
+	<p> <img src='DB_overload.png'></img> </p>
+	<p> Putting a large amount of data into the database can also affect the load time of this page. The code above shows a large amount of posts under the username "kcrowe01". When loading this page using the query "?username=kcrowe01" the page takes several minutes to load as shown below. This security threat allows attackers to cripple the efficiency of this app, and possibly also cause the app to crash Fixing this issue could be as simple as only letting a certain amount of scores come in from an individual username. It would also be a good idea to delete some of the user's lower scores at a certain point to ensure the database does not fill up.</p>
+		<p> <img src='query_load.png'></img> </p><p> <img src='load_time.png'></img> </p>
+	</div>
+	<h2> Conclusion </h2>
+	<p> The major security problems in this application come from lack of checking user input to the database. This is a simple fix and one that should be implemented if this app were to be used on a larger scale. Some of the less important fixes, such as providing a key to only trusted users, could be a bit more challenging to implement, but the site could also be fairly secure without these. </p>
+
+</body>
+</html>

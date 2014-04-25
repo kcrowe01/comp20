@@ -21,22 +21,22 @@
 	<p>- Affects GET API</p>
 	<p>- Security Threat HIGH </p>
 	<p> This issue makes the Gamecenter app extremely vulnerable to attacks using the POST API such as the attack pictured below</p> 
-	<p> <img src='https://github.com/tuftsdev/comp20-kcrowell/blob/master/security/youtubecurl.PNG'></p>
+	<p> <img src='youtubecurl.PNG'></p>
 	<p> This attack places a script within the database that, when loaded on the root html page, redirects to a youtube page. This kind of attack could be very harmful to another page that uses the GET API as well because it could load values from the database that were not what the user was expecting, such as the script that was used in this example. Injecting a script into the database allows the attacker to insert any html of javascript that they desire. This can be avoided by checking the external input taken in by a POST command and looking for dangerous characters such as "<" and ">" </p>
 	<h3> No Authentication Necessarry </h3>
 	<p>- Affects POST API</p>
 	<p>- Security Threat MEDIUM </p>
 	<p> Another security issue with this app is the fact that it does not check the credentials of the client attempting to use it. While this allows easy access to those who want to use this app it can also be a security concern. This page allows Cross Origin Resource Sharing for all domains(shown below).
 	</p>
-	<p> <img src='https://github.com/tuftsdev/comp20-kcrowell/blob/master/security/Alloworigins.PNG'> <img src='https://github.com/tuftsdev/comp20-kcrowell/blob/gh-pages/security/Allow2048.PNG'></p>
+	<p> <img src='Alloworigins.PNG'> <img src='Allow2048.PNG'></p>
 	<p> This means it can be accessed by any other domain, even those that are malicious. This also means that scores posted to this page may not be realistic, which would defeat the purpose of the app. In order to reduce the danger of this it would be a good idea to check for a key that has provided to the user. It would also be a good idea to only allow certain domains to post to this app. For example, this app is used for 2048 scores so it would be a good idea to only allow the domain that the 2048 game is played on.</p> 
 	<h3> Overloading Database </h3>
 	<p>- Affects POST API</p>
 	<p>- Security Threat MEDIUM</p>
 	<p> Another flaw of this application is that it does not limit the number of posts from a certain user. This allows someone to fill up the entire database with whatever data they choose. This will cause the app to not work as intended because future scores will no longer be able to be saved in the database. A program running a simple loop as shown below can easily fill up the database so that no other user may post to it.</p>
-	<p> <img src='https://github.com/tuftsdev/comp20-kcrowell/blob/master/security/DBoverload.PNG'> </p>
+	<p> <img src='DBoverload.PNG'> </p>
 	<p> Putting a large amount of data into the database can also affect the load time of this page. The code above shows a large amount of posts under the username "kcrowe01". When loading this page using the query "?username=kcrowe01" the page takes several minutes to load as shown below. This security threat allows attackers to cripple the efficiency of this app, and possibly also cause the app to crash Fixing this issue could be as simple as only letting a certain amount of scores come in from an individual username. It would also be a good idea to delete some of the user's lower scores at a certain point to ensure the database does not fill up.</p>
-		<p> <img src='https://github.com/tuftsdev/comp20-kcrowell/blob/master/security/queryload.PNG'> </p><p> <img src='https://github.com/tuftsdev/comp20-kcrowell/blob/master/security/loadtime.PNG'> </p>
+		<p> <img src='queryload.PNG'> </p><p> <img src='loadtime.PNG'> </p>
 	</div>
 	<h2> Conclusion </h2>
 	<p> The major security problems in this application come from lack of checking user input to the database. This is a simple fix and one that should be implemented if this app were to be used on a larger scale. Some of the less important fixes, such as providing a key to only trusted users, could be a bit more challenging to implement, but the site could also be fairly secure without these. </p>
